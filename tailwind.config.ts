@@ -1,14 +1,14 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config = {
   darkMode: ["class"],
   content: [
-  "./index.html",
-  "./pages/*/.{ts,tsx}",
-  "./components/*/.{ts,tsx}",
-  "./app/*/.{ts,tsx}",
-  "./src/*/.{ts,tsx}",
-],
+    "./index.html",
+    "./src/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -20,8 +20,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -29,6 +29,7 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -57,6 +58,8 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        /* Sidebar */
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -67,12 +70,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+
+        /* Subjects (FULLY SYNCED) */
         subject: {
           ds: "hsl(var(--subject-ds))",
           cpp: "hsl(var(--subject-cpp))",
           dbms: "hsl(var(--subject-dbms))",
           os: "hsl(var(--subject-os))",
           maths: "hsl(var(--subject-maths))",
+          physics: "hsl(var(--subject-physics))",
+          chemistry: "hsl(var(--subject-chemistry))",
+          biology: "hsl(var(--subject-biology))",
+          networks: "hsl(var(--subject-networks))",
         },
       },
       borderRadius: {
@@ -108,3 +117,5 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
+export default config;
